@@ -4,13 +4,35 @@
 
 O desafio proposto exigiu a criação de um workflow automatizado que permita o deploy da infraestrutura e a execução da API. Para atender a essas exigências, foi criado um repositório no GitHub contendo os códigos necessários para essa implementação.
 
-O workflow criado permitiu a realização do build da imagem e push para o Docker Hub, deploy do Terraform para a criação da infraestrutura na AWS, com a criação da instância EC2 e execução do container via docker-compose up -d. O deploy foi realizado com sucesso e a API está disponível diretamente pela porta 80 da instância EC2. Para garantir a segurança do ambiente, também foi criado um Security Group que permite o acesso à API somente pela porta 80 e 22 que pode ser desabilitada via terraform.
+O workflow criado permitiu a realização do build da imagem e push para o Docker Hub, deploy do Terraform para a criação da infraestrutura na AWS, com a criação da instância EC2 e execução do container via `docker-compose up -d`. O deploy foi realizado com sucesso e a API está disponível diretamente pela porta 80 da instância EC2. Para garantir a segurança do ambiente, também foi criado um Security Group que permite o acesso à API somente pela porta 80 e a porta 9443 para acesso ao Portainer.
 
-A API está rodando internamente com o nome app_api_1 na porta 8000 do container, sendo acessível pelo container rodrigoturatti/curl-globo que está na mesma rede chamada globo. Isso garante que o script para inserir comentários funcione corretamente.
+A API está rodando internamente com o nome app_api_1 na porta 8000 do container, sendo acessível pelo container `rodrigoturatti/curl-globo` que está na mesma rede chamada globo. Isso garante que o script consiga inserir comentários localmente.
 
 Além disso, foi criado um workflow para o destroy da infraestrutura, que pode ser ativado manualmente. Essa ação é importante para garantir que não haja custos desnecessários na nuvem da AWS.
 
 Com esse workflow automatizado, é possível realizar o deploy e destruir a infraestrutura rapidamente, o que é muito útil para testes e desenvolvimento. Também é possível reutilizar esse workflow para outros projetos e ambientes, tornando a implementação mais eficiente e ágil.
+
+## Demonstração do projeto
+![Demonstração](images/Demo_API_Globo.gif)
+
+# Separação das branches
+
+### Branch `main`
+ Projeto com o desafio enviado sem alterações.
+
+### Branch `develop` (Entrega do desafio)
+Branch utilizada para o desenvolvimento do projeto, onde todos os códigos desenvolvidos em branchs específicas foram mergeados para essa branch.
+
+### Branch `feature/Dockerfile`
+Branch utilizada para o desenvolvimento do Dockerfile, docker-compose.yaml e scripts.
+
+### Branch `feature/build-docker`
+Branch utilizada para o desenvolvimento do workflow do GitHub para o build da imagem e push para o Docker Hub.
+
+### Branch `feature/terraform`
+Branch utilizada para o desenvolvimento do Terraform para a criação da infraestrutura na AWS.
+
+
 
 # Fluxo de trabalho
 ### Etapas para o desenvolvimento do desafio
@@ -70,6 +92,12 @@ Para destruir o ambiente, pode ser executado o workflow do Terraform para o dest
 ![Terraform Destroy](images/terraform_destroy.png)
 
 ## Como testar o projeto
+
+### Monitorando os container ativos, restarts e logs - Portainer
+Após o deploy da infraestrutura, é possível acessar o painel do Portainer via browser pela url `https://$IP_SERVER:9443`. Para isso, basta acessar o IP público da instância EC2 criada pelo Terraform na porta `9443`. Após o acesso, é necessário criar um usuário e senha para acesso.
+**OBS: o acesso ao Portainer é feito via HTTPS, e caso demore para acessar o dado timeout e será necessário reiniciar o container do Portainer.**
+
+
 **Script para inserir os comentários na API**
 *OBS: o script está sendo executado dentro do container `rodrigoturatti/curl-globo` que executa na sequência após o container da API estar disponível, para garantir que sempre seja possível fazer a listagem dos comentários.*
 
