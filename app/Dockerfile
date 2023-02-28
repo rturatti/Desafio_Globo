@@ -1,4 +1,4 @@
-FROM python AS base
+FROM python:alpine3.13 AS base
 WORKDIR /app
 COPY api.py /app
 COPY requirements.txt /app
