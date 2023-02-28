@@ -10,7 +10,6 @@ services:
 
   curl:
     image: rodrigoturatti/curl-globo:latest
-    restart: no
     depends_on:
       - api
     networks:
