@@ -70,6 +70,12 @@ Para destruir o ambiente, pode ser executado o workflow do Terraform para o dest
 ![Terraform Destroy](images/terraform_destroy.png)
 
 ## Como testar o projeto
+
+### Monitorando os container ativos, restarts e logs - Portainer
+Após o deploy da infraestrutura, é possível acessar o painel do Portainer via browser pela url `https://$IP_SERVER:9443`. Para isso, basta acessar o IP público da instância EC2 criada pelo Terraform na porta `9443`. Após o acesso, é necessário criar um usuário e senha para acesso.
+**OBS: o acesso ao Portainer é feito via HTTPS, e caso demore para acessar o dado timeout e será necessário reiniciar o container do Portainer.**
+
+
 **Script para inserir os comentários na API**
 *OBS: o script está sendo executado dentro do container `rodrigoturatti/curl-globo` que executa na sequência após o container da API estar disponível, para garantir que sempre seja possível fazer a listagem dos comentários.*
 

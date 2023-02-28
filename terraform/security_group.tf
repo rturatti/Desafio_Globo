@@ -17,7 +17,7 @@ module "api_service_sg" {
       from_port   = 9443
       to_port     = 9443
       protocol    = "tcp"
-      description = "HTTPS"
+      description = "HTTPS Portainer"
       cidr_blocks = "0.0.0.0/0"
     }
   ]
