@@ -13,7 +13,7 @@
 1. Criado o arquivo `comments.sh` para executar o script e inserir os comentários na API.
 1. Alterado o arquivo `Dockerfile` para copiar o script `comments.sh` para a imagem e instalação do curl.
 
-### Etapas para o desenvolvimento do Workflow do GitHub
+### Etapas para o desenvolvimento do Workflow do GitHub - Docker Build
 1. Criado o arquivo `.github/workflows/docker-build.yaml` com o workflow para o build da imagem.
 1. Alterada a identação do arquivo `Dockerfile` para acionamento automático do workflow.
 1. Build e Push executados com sucesso.
@@ -28,4 +28,10 @@
 1. Criado o arquivo `security_group.tf` com o Security Group.
 1. Criado o arquivo `instance.tf` com a criação da instância EC2 e chave privada que está sendo salva dentro do bucket `ct-terraformstate`.
 1. Criado o arquivo `user-data.sh` com o script de instalação dos pacotes e comandos necessários.    
-1. Alterado o arquivo `security_group.tf` para permitir o acesso a API pela porta 80.    
+1. Alterado o arquivo `security_group.tf` para permitir o acesso a API pela porta 80.
+1. Ajustado o arquivo `user-data.sh` para instalação do Docker-Compose e execução do container via `docker-compose up -d`.
+
+### Etapas para o desenvolvimento do Workflow do GitHub - Terraform Create e Destroy
+1. Criado o arquivo `.github/workflows/terraform-create.yaml` com o workflow para o deploy da infraestrutura.
+1. Criado o arquivo `.github/workflows/terraform-destroy.yaml` com o workflow para o destroy da infraestrutura somente ativado manualmente.
+
