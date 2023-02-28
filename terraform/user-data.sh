@@ -4,7 +4,7 @@ echo "testando o user-data.sh" >> $LOG
 
 apt-get update -y >> $LOG
 apt-get install python3 curl git zip -y >> $LOG
-apt-get install docker.io -y >> $LOG
+apt-get install docker.io -y >> $LOG && apt-get install docker-compose -y >> $LOG
 systemctl enable --now docker >> $LOG
 systemctl start docker >> $LOG
 docker pull rodrigoturatti/desafio-globo:latest >> $LOG

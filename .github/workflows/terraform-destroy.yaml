@@ -1,6 +1,9 @@
 name: 'Terraform Destroy'
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - iac/destroy
 
 jobs:
   terraform:
