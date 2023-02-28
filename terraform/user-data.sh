@@ -9,4 +9,6 @@ systemctl enable --now docker >> $LOG
 systemctl start docker >> $LOG
 mkdir /app && cd /app
 wget https://raw.githubusercontent.com/rturatti/Desafio_Globo/develop/app/docker-compose.yaml
-docker-compose up -d && sleep 20s && docker run --rm -it --network app_globo rodrigoturatti/curl-globo >> $LOG
+docker-compose up -d >> $LOG
+sleep 20s >> $LOG
+docker run --rm -it --network app_globo rodrigoturatti/curl-globo >> $LOG
