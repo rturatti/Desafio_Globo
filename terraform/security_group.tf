@@ -7,8 +7,8 @@ module "api_service_sg" {
 
   ingress_with_cidr_blocks = [
     {
-      from_port   = 8000
-      to_port     = 8000
+      from_port   = 80
+      to_port     = 80
       protocol    = "tcp"
       description = "API-service ports"
       cidr_blocks = "0.0.0.0/0"
