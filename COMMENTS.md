@@ -12,6 +12,9 @@ Além disso, foi criado um workflow para o destroy da infraestrutura, que pode s
 
 Com esse workflow automatizado, é possível realizar o deploy e destruir a infraestrutura rapidamente, o que é muito útil para testes e desenvolvimento. Também é possível reutilizar esse workflow para outros projetos e ambientes, tornando a implementação mais eficiente e ágil.
 
+## Demonstração do projeto
+![Demonstração](images/Demo_API_Globo.gif)
+
 # Fluxo de trabalho
 ### Etapas para o desenvolvimento do desafio
 1. Criei um repositório no GitHub.
