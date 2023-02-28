@@ -10,3 +10,5 @@
 1. Alterado o arquivo `Dockerfile` para a imagem do `python:alpine3.13` para diminuir o tamanho da imagem.
 1. Alterada a ordem das instruções para melhorar o cache do Docker.
 1. Criado o arquivo `.dockerignore` para ignorar arquivos desnecessários para o build da imagem. 
+1. Criado o arquivo `comments.sh` para executar o script e inserir os comentários na API.
+1. Alterado o arquivo `Dockerfile` para copiar o script `comments.sh` para a imagem e instalação do curl.
