@@ -1,6 +1,5 @@
 #!/bin/bash
 LOG=/var/log/user-data.log
-
 echo "testando o user-data.sh" >> $LOG
 
 apt-get update -y >> $LOG
