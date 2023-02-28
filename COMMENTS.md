@@ -12,3 +12,10 @@
 1. Criado o arquivo `.dockerignore` para ignorar arquivos desnecessários para o build da imagem. 
 1. Criado o arquivo `comments.sh` para executar o script e inserir os comentários na API.
 1. Alterado o arquivo `Dockerfile` para copiar o script `comments.sh` para a imagem e instalação do curl.
+
+### Passos para o desenvolvimento do Workflow do GitHub
+1. Criado o arquivo `.github/workflows/docker-build.yaml` com o workflow para o build da imagem.
+1. Alterada a identação do arquivo `Dockerfile` para acionamento automático do workflow.
+1. Build e Push executados com sucesso.
+
+![Build and Push](images/dockerhub-tag1.png)
