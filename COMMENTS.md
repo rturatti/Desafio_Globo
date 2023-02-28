@@ -15,6 +15,25 @@ Com esse workflow automatizado, é possível realizar o deploy e destruir a infr
 ## Demonstração do projeto
 ![Demonstração](images/Demo_API_Globo.gif)
 
+# Separação das branches
+
+### Branch `main`
+ Projeto com o desafio enviado sem alterações.
+
+### Branch `develop` (Entrega do desafio)
+Branch utilizada para o desenvolvimento do projeto, onde todos os códigos desenvolvidos em branchs específicas foram mergeados para essa branch.
+
+### Branch `feature/Dockerfile`
+Branch utilizada para o desenvolvimento do Dockerfile, docker-compose.yaml e scripts.
+
+### Branch `feature/build-docker`
+Branch utilizada para o desenvolvimento do workflow do GitHub para o build da imagem e push para o Docker Hub.
+
+### Branch `feature/terraform`
+Branch utilizada para o desenvolvimento do Terraform para a criação da infraestrutura na AWS.
+
+
+
 # Fluxo de trabalho
 ### Etapas para o desenvolvimento do desafio
 1. Criei um repositório no GitHub.
