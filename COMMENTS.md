@@ -27,4 +27,5 @@
 1. Criado o arquivo `network.tf` com a criação da VPC, Subnets, Internet Gateway, Route Table.
 1. Criado o arquivo `security_group.tf` com o Security Group.
 1. Criado o arquivo `instance.tf` com a criação da instância EC2 e chave privada que está sendo salva dentro do bucket `ct-terraformstate`.
-1. Criado o arquivo `user-data.sh` com o script de instalação dos pacotes e comandos necessários.       
+1. Criado o arquivo `user-data.sh` com o script de instalação dos pacotes e comandos necessários.    
+1. Alterado o arquivo `security_group.tf` para permitir o acesso a API pela porta 80.    
