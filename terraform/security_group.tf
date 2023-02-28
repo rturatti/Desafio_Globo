@@ -14,10 +14,10 @@ module "api_service_sg" {
       cidr_blocks = "0.0.0.0/0"
     },
     {
-      from_port   = 22
-      to_port     = 22
+      from_port   = 9443
+      to_port     = 9443
       protocol    = "tcp"
-      description = "SSH"
+      description = "HTTPS"
       cidr_blocks = "0.0.0.0/0"
     }
   ]
