@@ -1,0 +1,11 @@
+version: '3'
+services:
+  api:
+    image: rodrigoturatti/desafio-globo:latest
+    restart: always
+    ports:
+      - "80:8000"
+    networks:
+      - globo
+networks:
+  globo:
