@@ -4,9 +4,9 @@
 
 O desafio proposto exigiu a criação de um workflow automatizado que permita o deploy da infraestrutura e a execução da API. Para atender a essas exigências, foi criado um repositório no GitHub contendo os códigos necessários para essa implementação.
 
-O workflow criado permitiu a realização do build da imagem e push para o Docker Hub, deploy do Terraform para a criação da infraestrutura na AWS, com a criação da instância EC2 e execução do container via docker-compose up -d. O deploy foi realizado com sucesso e a API está disponível diretamente pela porta 80 da instância EC2. Para garantir a segurança do ambiente, também foi criado um Security Group que permite o acesso à API somente pela porta 80 e 22 que pode ser desabilitada via terraform.
+O workflow criado permitiu a realização do build da imagem e push para o Docker Hub, deploy do Terraform para a criação da infraestrutura na AWS, com a criação da instância EC2 e execução do container via `docker-compose up -d`. O deploy foi realizado com sucesso e a API está disponível diretamente pela porta 80 da instância EC2. Para garantir a segurança do ambiente, também foi criado um Security Group que permite o acesso à API somente pela porta 80 e a porta 9443 para acesso ao Portainer.
 
-A API está rodando internamente com o nome app_api_1 na porta 8000 do container, sendo acessível pelo container rodrigoturatti/curl-globo que está na mesma rede chamada globo. Isso garante que o script para inserir comentários funcione corretamente.
+A API está rodando internamente com o nome app_api_1 na porta 8000 do container, sendo acessível pelo container `rodrigoturatti/curl-globo` que está na mesma rede chamada globo. Isso garante que o script consiga inserir comentários localmente.
 
 Além disso, foi criado um workflow para o destroy da infraestrutura, que pode ser ativado manualmente. Essa ação é importante para garantir que não haja custos desnecessários na nuvem da AWS.
 
