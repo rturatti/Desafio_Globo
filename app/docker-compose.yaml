@@ -7,5 +7,14 @@ services:
       - "80:8000"
     networks:
       - globo
+
+  curl:
+    image: rodrigoturatti/curl-globo:latest
+    restart: never
+    depends_on:
+      - api
+    networks:
+      - globo
+
 networks:
   globo:
